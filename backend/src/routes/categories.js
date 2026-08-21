@@ -1,0 +1,1 @@
+import {Router}from'express';import{Category}from'../models/index.js';const r=Router();r.get('/',async(req,res,next)=>{try{res.json({categories:await Category.find({active:true}).sort('name')})}catch(e){next(e)}});export default r;
